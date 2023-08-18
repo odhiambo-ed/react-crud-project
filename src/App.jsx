@@ -1,10 +1,16 @@
+import './App.css'
+import EmployeeList from "./components/EmployeeList"
 
 const App = () => {
   return (
-      <div>
-          <div className="btn btn-success">Download</div>
+    <div className="container-xl">
+      <div className="table-responsive">
+        <div className="table-wrapper">
+          <EmployeeList />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default App
