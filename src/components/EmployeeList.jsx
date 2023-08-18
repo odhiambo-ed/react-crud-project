@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Employee from "./Employee";
+import employeeData from "../data";
 
 const EmployeeList = () => {
+    const [employees] = useState([employeeData]);
   return (
     <>
       <div className="table-title">
@@ -11,11 +14,7 @@ const EmployeeList = () => {
             </h2>
           </div>
           <div className="col-sm-6">
-            <a
-              href="#addEmployeeModal"
-              className="btn"
-              data-toggle="modal"
-            >
+            <a href="#addEmployeeModal" className="btn" data-toggle="modal">
               <i className="material-icons">&#xE147;</i>{" "}
               <span>Add New Employee</span>
             </a>
@@ -33,9 +32,11 @@ const EmployeeList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <Employee />
-          </tr>
+          {employees.map((employee) => (
+            <tr key={employee.id}>
+              <Employee employee={employee} />
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

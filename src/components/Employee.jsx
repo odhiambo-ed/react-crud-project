@@ -1,11 +1,12 @@
+import React from 'react'
 
-const Employee = () => {
+const Employee = ({ employee }) => {
   return (
     <>
-      <td>Martin Blank</td>
-      <td>martinblank@mail.com</td>
-      <td>Via Monte Bianco 34, Turin, Italy</td>
-      <td>(480) 631-2097</td>
+      <td>{employee.name}</td>
+      <td>{employee.email}</td>
+      <td>{employee.address}</td>
+      <td>{employee.phone}</td>
       <td>
         <a href="#editEmployeeModal" className="edit" data-toggle="modal">
           <i className="material-icons" data-toggle="tooltip" title="Edit">
@@ -20,6 +21,6 @@ const Employee = () => {
       </td>
     </>
   );
-}
+};
 
 export default Employee
