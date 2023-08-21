@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { EmployeeListContext } from "./contexts/EmployeeListContext";
 import Employee from "./Employee";
-import employeeData from "../data";
 
 const EmployeeList = () => {
-    const [employees] = useState([employeeData]);
+  const { employees } = useContext(EmployeeListContext);
+
   return (
     <>
       <div className="table-title">

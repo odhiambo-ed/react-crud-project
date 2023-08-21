@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const Employee = () => {
+const Employee = ({employee}) => {
   return (
     <>
       <td>{employee.name}</td>
