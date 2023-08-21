@@ -6,11 +6,8 @@ const EmployeeListContextProvider = (props) => {
   const [employees, setEmployees] = useState([employeeData]);
 
   useEffect(() => {
+    localStorage.setItem("employees", JSON.stringify(employeeData));
     setEmployees(JSON.parse(localStorage.getItem("employees")));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("employees", JSON.stringify(employees));
   });
 
   return (
