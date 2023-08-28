@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { EmployeeListContext } from "./contexts/EmployeeListContext";
 import Employee from "./Employee";
 import Button from "react-bootstrap/Button";
@@ -11,6 +11,10 @@ const EmployeeList = () => {
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  useEffect(() => {
+    handleClose()
+  }, [employees])
 
   return (
     <>

@@ -10,8 +10,8 @@ const EmployeeListContextProvider = (props) => {
   const [employees, setEmployees] = useState([employeeData]);
   
 
-  const addEmployee = (id, name, address, phone) => {
-    setEmployees([...employees, {id:uuidv4(), name, address, phone}]);
+  const addEmployee = (id, name, email, address, phone) => {
+    setEmployees([...employees, {id:uuidv4(), name, email, address, phone}]);
   }
 
   useEffect(() => {
